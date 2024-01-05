@@ -1,0 +1,13 @@
+.filter-container{
+    width: 100%;
+    input{
+        width: 100%;
+        border-radius: 10px;
+        border: 0;
+        padding-block: 10px;
+        padding-inline: 15px;
+        &:focus{
+            outline: 1px solid gray;
+        }
+    }
+}

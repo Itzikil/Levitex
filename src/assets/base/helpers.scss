@@ -1,0 +1,37 @@
+.flex {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.space {
+        justify-content: space-between;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+button{
+    width: 100px;
+    border-radius: 30px;
+    border: 0;
+    padding: 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgb(82, 80, 80);
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
