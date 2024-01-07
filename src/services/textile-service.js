@@ -3,7 +3,7 @@ import { utilService } from "./util.service"
 export const textileService = {
     loadCategories,
     loadtextiles,
-    getTextile
+    getTextileById
 }
 const STORAGE_KEY = 'textile'
 var gTextiles = utilService.loadFromStorage(STORAGE_KEY) || demoData()
@@ -43,7 +43,7 @@ function loadtextiles(category = '') {
     return textiles
 }
 
-function getTextile(textileId) {
+function getTextileById(textileId) {
     return gTextiles.find(({ _id }) => textileId === _id)
 }
 

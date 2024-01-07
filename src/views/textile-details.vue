@@ -22,7 +22,7 @@ export default {
     },
     created() {
         const id = this.$route.params.id
-        const textile = textileService.getTextile(id)
+        const textile = textileService.getTextileById(id)
         this.textile = textile
     },
     methods: {

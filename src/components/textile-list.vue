@@ -16,7 +16,6 @@ export default {
     created() {
     },
     mounted() {
-        console.log(this.products);
     },
     components: {
         textilePreview

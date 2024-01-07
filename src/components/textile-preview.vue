@@ -7,7 +7,9 @@
                 <p class="product-desc">{{ product.desc }}</p>
                 <p><span>$</span>{{ product.price }}</p>
             </div>
-            <img class="cart" src="../assets/imgs/cart.png" alt="">
+            <button @click="addToCart(product._id)">
+                <img class="cart" src="../assets/imgs/cart.png" alt="">
+            </button>
         </li>
     </router-link>
 </template>
@@ -16,6 +18,11 @@
 export default {
     props: {
         product: Object
+    },
+    methods:{
+        addToCart(productId){
+             this.$store.dispatch({ type: 'addToCart', productId })
+        }
     }
 }
 </script>

@@ -1,0 +1,20 @@
+.cart-page {
+    .cart-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            display: flex;
+            gap: 20px;
+            width: 250px;
+            justify-content: space-between;
+
+            img {
+                width: 100px;
+                height: 70px;
+                border-end-end-radius: 5px;
+            }
+        }
+    }
+}
