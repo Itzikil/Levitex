@@ -6,10 +6,10 @@
 
     h1 {
         font-size: 150px;
-        // -webkit-text-stroke: 2px rgb(70, 66, 66);
-        -webkit-text-stroke: 2px rgb(223, 219, 219);
+        -webkit-text-stroke: 2px $clr1;
         color: transparent;
-        // background-clip: text;
+        background: linear-gradient(to right, $clr1, cadetblue);
+        -webkit-background-clip: text;
     }
 
     .home-img {
