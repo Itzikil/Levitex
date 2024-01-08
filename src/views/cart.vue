@@ -10,8 +10,11 @@
                 <img :src="item.imgUrl" alt="">
             </li>
         </ul>
-        <h3>Total</h3>
-        <p>{{ sumItems }} $</p>
+        <div>
+            <h3>Total</h3>
+            <p>{{ sumItems }} $</p>
+        </div>
+        <button>Pay</button>
     </div>
 </template>
   

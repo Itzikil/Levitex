@@ -5,6 +5,7 @@ import cart from '../views/cart.vue'
 import textilePage from '../views/textile-page.vue'
 import textileDetails from '../views/textile-details.vue'
 import signupPage from '../views/signup-page.vue'
+import userDetails from '../views/user-details.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,8 +36,13 @@ const router = createRouter({
       component: signupPage
     },
     {
-      path: '/textile-page',
-      name: 'textile-page',
+      path: '/user/:id',
+      name: 'user',
+      component: userDetails
+    },
+    {
+      path: '/textile',
+      name: 'textile',
       component: textilePage
     },
     {

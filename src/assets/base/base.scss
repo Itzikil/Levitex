@@ -67,7 +67,7 @@
 body {
   min-height: 100vh;
   // color: var(--color-text);
-  background: var(--color-background);
+  background: $clr6;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: varela;
@@ -130,6 +130,21 @@ ul {
 .show-on-mobile {
   display: none;
 }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+a {
+  font-family: varela;
+}
+
+.footer {}
 
 @media (max-width:600px) {
   .show-on-mobile {

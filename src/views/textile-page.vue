@@ -3,11 +3,12 @@
         <textileFilter />
         <div class="img-container">
             <div v-if="!products.length" v-for="category in categories" class="card-container">
-                <div class="card">
+                <div class="card" @click="loadtextiles(category.name)">
                     <img class="front-card" :src=category.imgUrl alt="category">
-                    <div class="back-card" @click="loadtextiles(category.name)">
+                    <p>{{ category.name }}</p>
+                    <!-- <div class="back-card" @click="loadtextiles(category.name)">
                         <p>{{ category.name }}</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <textileList v-else :products="products" />

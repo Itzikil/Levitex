@@ -3,7 +3,7 @@ import { userService } from '../services/user-service'
 export const userStore = {
     state: {
         users: [],
-        loggedinUser: null,
+        loggedinUser: {username:'itzik', password: '123'},
     },
     getters: {
         users({ users }) { return users },

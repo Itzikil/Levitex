@@ -12,6 +12,7 @@
     div {
         border-radius: 10px;
         overflow: hidden;
+        height: 300px;
 
         img {
             width: 50%;
@@ -33,7 +34,7 @@
     @media (max-width:600px) {
         div {
             flex-direction: column;
-
+            height: fit-content;
             img {
                 width: 100%;
             }
