@@ -5,7 +5,8 @@
 
     h1 {
         font-size: 150px;
-        -webkit-text-stroke: 2px $clr1;
+        // -webkit-text-stroke: 2px $clr1;
+        font-weight: 900;
         color: transparent;
         background: linear-gradient(to right, $clr2, $clr4);
         -webkit-background-clip: text;

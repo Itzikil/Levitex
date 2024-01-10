@@ -14,44 +14,89 @@ header {
                 color: $clr2;
             }
         }
+
+        .icon-container {
+            img {
+                display: none;
+            }
+        }
     }
 
     @media (max-width:600px) {
 
+        .hide-on-mobile {
+            display: none;
+        }
+
         .mobile-nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            width: 100%;
             align-items: center;
             gap: 5px;
+
+            img {
+                width: 32px;
+            }
+
+            >* {
+                display: flex;
+            }
+
+            .cart-container {
+                position: relative;
+
+                p {
+                    position: absolute;
+                    top: -5px;
+                    right: -10px;
+                    background-color: $clr2;
+                    border-radius: 50%;
+                    padding: 5px;
+                    height: 20px;
+                    width: 20px;
+                    line-height: 12px;
+                    text-align: center;
+                    color: $clr4;
+                    font-size: 14px;
+                    font-weight: bolder;
+                }
+            }
         }
 
         nav {
             flex-direction: column;
             position: fixed;
-            right: 0;
+            left: 0;
             top: 0;
             background-color: white;
             height: 100vh;
             z-index: 100;
             padding-inline: 20px;
             padding-top: 30px;
-            transform: translateX(100%);
+            transform: translateX(-100%);
             transition: 1s;
-            align-items: end;
-
-            >* {
-                color: #2d333b;
-            }
+            align-items: start;
+            width: 50vw;
 
             .nav-logo {
-                >* {
-                    color: #2d333b;
-                }
 
                 display: flex;
                 align-items: center;
                 gap: 40px;
                 margin-bottom: 30px;
+            }
+
+            .icon-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                }
             }
         }
 
