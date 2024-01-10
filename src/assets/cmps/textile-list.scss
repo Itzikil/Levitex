@@ -29,6 +29,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin-bottom: 10px;
         }
 
         .preview-info {
@@ -67,6 +68,7 @@
     }
 
     @media (max-width:600px) {
+        gap: 20px;
         .textile-preview-container {
             flex-basis: 100%;
         }
