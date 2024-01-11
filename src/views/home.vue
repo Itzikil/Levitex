@@ -5,6 +5,7 @@
     <router-link to="/textile"> Start exploring! </router-link>
     <div class="category-container">
       <router-link v-for="category in categories" :to="`/explore/${category.name}`">
+        <h3>{{ category.name }}</h3>
         <img :src="category.imgUrl" alt="">
       </router-link>
     </div>

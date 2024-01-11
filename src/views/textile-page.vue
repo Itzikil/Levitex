@@ -1,6 +1,6 @@
 <template>
     <section class="textile-page">
-        <textileFilter />
+        <textileFilter @setFilter="setFilter" />
         <div class="img-container">
             <div v-if="!products.length" v-for="category in categories" class="card-container">
                 <router-link class="card" :to="`/explore/${category.name}`" @click="loadtextiles(category.name)">
@@ -22,7 +22,10 @@ export default {
     data() {
         return {
             categories: textileService.loadCategories(),
-            products: []
+            products: [],
+            filterBy: {
+                name: '',
+            }
         }
     },
     created() {
@@ -32,6 +35,11 @@ export default {
     methods: {
         loadtextiles(category) {
             this.products = textileService.loadtextiles(category)
+        },
+        setFilter(filterBy) {
+            this.$store.dispatch({ type: 'setFilter', filterBy: { ...filterBy } })
+            this.loadtextiles()
+            console.log(filterBy);
         }
     },
     watch: {

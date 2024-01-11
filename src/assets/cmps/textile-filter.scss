@@ -1,13 +1,31 @@
-.filter-container{
+.filter-container {
     width: 100%;
-    input{
+
+    input {
         width: 100%;
         border-radius: 10px;
         border: 0;
         padding-block: 10px;
         padding-inline: 15px;
-        &:focus{
-            outline: 1px solid gray;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .suggest-container {
+        position: relative;
+
+        .suggests {
+            position: absolute;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            z-index: 10;
+            background-color: rgb(207, 197, 197);
+            width: 100%;
+            padding: 5px;
+            border-end-end-radius: 5px;
+            border-end-start-radius: 5px;
         }
     }
 }
