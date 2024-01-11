@@ -50,6 +50,11 @@ const router = createRouter({
       name: 'textile-details',
       component: textileDetails
     },
+    {
+      path: '/explore/:id?',
+      name: 'explore',
+      component: textilePage
+    },
   ]
 })
 

@@ -1,5 +1,6 @@
 <template>
     <section v-if="textile" class="textile-details flex column">
+        <router-link :to="`/explore/${textile.category}`">back to {{ textile.category }}</router-link>
         <h1>{{ textile.name }}</h1>
         <div class="flex">
             <img :src="textile.imgUrl" alt="">

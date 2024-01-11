@@ -20,7 +20,7 @@
                 </RouterLink>
                 <img src="../assets/imgs/x.svg" alt="" @click="openNav = !openNav">
             </div>
-            <RouterLink to="/textile" class="icon-container">
+            <RouterLink to="/explore" class="icon-container">
                 <img src="../assets/imgs/bed.svg" alt="">
                 <p>Bedding</p>
             </RouterLink>
@@ -63,7 +63,6 @@ export default {
     },
     computed: {
         loggedinUser() {
-            console.log(this.$store.getters.loggedinUser);
             return this.$store.getters.loggedinUser
         },
         cartItems() {
@@ -75,7 +74,7 @@ export default {
             this.$store.dispatch({ type: 'logout', })
         },
         handleNavClick(event) {
-            if (event.target.tagName === 'A') this.openNav = false;
+            if (event.target.tagName !== 'NAV') this.openNav = false;
         },
     }
 }

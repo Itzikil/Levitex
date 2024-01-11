@@ -3,13 +3,10 @@
         <textileFilter />
         <div class="img-container">
             <div v-if="!products.length" v-for="category in categories" class="card-container">
-                <div class="card" @click="loadtextiles(category.name)">
+                <router-link class="card" :to="`/explore/${category.name}`" @click="loadtextiles(category.name)">
                     <img class="front-card" :src=category.imgUrl alt="category">
                     <p>{{ category.name }}</p>
-                    <!-- <div class="back-card" @click="loadtextiles(category.name)">
-                        <p>{{ category.name }}</p>
-                    </div> -->
-                </div>
+                </router-link>
             </div>
             <textileList v-else :products="products" />
         </div>
@@ -28,10 +25,20 @@ export default {
             products: []
         }
     },
+    created() {
+        const id = this.$route.params.id
+        this.products = id ? textileService.loadtextiles(id) : []
+    },
     methods: {
         loadtextiles(category) {
             this.products = textileService.loadtextiles(category)
         }
+    },
+    watch: {
+        $route(to, from) {
+            const id = this.$route.params.id;
+            this.products = id ? textileService.loadtextiles(id) : []
+        },
     },
     components: {
         textileList,

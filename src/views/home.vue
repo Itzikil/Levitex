@@ -4,7 +4,9 @@
     <h3 class="mb-20">Textile products in the best price</h3>
     <router-link to="/textile"> Start exploring! </router-link>
     <div class="category-container">
-      <img v-for="category in categories" :src="category.imgUrl" alt="">
+      <router-link v-for="category in categories" :to="`/explore/${category.name}`">
+        <img :src="category.imgUrl" alt="">
+      </router-link>
     </div>
   </main>
 </template>
@@ -18,6 +20,7 @@ export default {
       categories: textileService.loadCategories(),
     }
   },
+
   methods: {
   }
 }

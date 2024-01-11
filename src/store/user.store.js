@@ -3,7 +3,7 @@ import { userService } from '../services/user-service'
 export const userStore = {
     state: {
         users: [],
-        loggedinUser: {username:'itzik', password: '123'},
+        loggedinUser: {},
     },
     getters: {
         users({ users }) { return users },
@@ -21,9 +21,8 @@ export const userStore = {
         async login({ commit }, { userInfo }) {
             try {
                 const user = await userService.login(userInfo)
-                console.log(user);
                 commit({ type: 'setLoggedinUser', user })
-                console.log(this.state.userStore);
+                console.log(user);
                 return user
             } catch (err) {
                 console.log('userStore: Error in login', err)

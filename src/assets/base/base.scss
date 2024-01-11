@@ -127,10 +127,6 @@ ul {
 //   background: #524c4c;
 // }
 
-.show-on-mobile {
-  display: none;
-}
-
 p,
 h1,
 h2,
@@ -145,7 +141,9 @@ a {
   color: $clr1;
 }
 
-.footer {}
+.show-on-mobile {
+  display: none;
+}
 
 @media (max-width:600px) {
   .show-on-mobile {

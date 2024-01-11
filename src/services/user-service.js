@@ -35,10 +35,10 @@ function getUsers() {
     return utilService.loadFromStorage(USER_KEY)
 }
 
-function login(userInfo) {
+async function login(userInfo) {
     var users = getUsers()
     var user = users.filter(({ username }) => username === userInfo.username)[0]
-    if (!user || user.password !== userInfo.password) return
+    if (!user || user.password !== userInfo.password) throw new Error()  
     utilService.saveToStorage(LOGGEDIN_KEY, user) || ''
     return user
 }
