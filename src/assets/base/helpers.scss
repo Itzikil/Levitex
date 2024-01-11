@@ -22,16 +22,17 @@
     margin-bottom: 20px;
 }
 
-button{
-    width: 100px;
-    border-radius: 30px;
+button {
+    // width: 100px;
+    border-radius: 20px;
     border: 0;
     padding: 10px;
     font-weight: 600;
-    box-shadow: 0 2px 5px rgb(82, 80, 80);
+    // box-shadow: 0 1px 1px rgba(82, 80, 80, 0.322);
     cursor: pointer;
     transition: 0.5s;
-    &:hover{
+
+    &:hover {
         transform: scale(1.05);
     }
 }

@@ -14,7 +14,7 @@
             <h3>Total</h3>
             <p>{{ sumItems }} $</p>
         </div>
-        <button>Pay</button>
+        <button @click="addOrder">Pay</button>
     </div>
 </template>
   
@@ -26,6 +26,7 @@ export default {
         }
     },
     created() {
+        // console.log(this.cartItems());
     },
     computed: {
         cartItems() {
@@ -37,6 +38,9 @@ export default {
         },
     },
     methods: {
+        addOrder(){
+            this.$store.dispatch({ type: 'addOrder' })
+        }
     }
 }
 </script>

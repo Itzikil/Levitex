@@ -10,7 +10,7 @@
                 </div>
             </li>
         </router-link>
-        <button @click="addToCart(product._id)">
+        <button @click="addToCart(product)">
             <img class="cart" src="../assets/imgs/cart.png" alt="">
         </button>
     </div>
@@ -22,8 +22,8 @@ export default {
         product: Object
     },
     methods: {
-        addToCart(productId) {
-            this.$store.dispatch({ type: 'addToCart', productId })
+        addToCart(product) {
+            this.$store.dispatch({ type: 'addToCart', product })
         }
     }
 }

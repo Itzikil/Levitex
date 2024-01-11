@@ -2,11 +2,15 @@
 @import './base/base.scss';
 @import './base/helpers.scss';
 
+//cmps
 @import './cmps/header.scss';
 @import './cmps/textile-list.scss';
 @import './cmps/textile-filter.scss';
+
+//views
 @import './views/home.scss';
 @import './views/signup.scss';
 @import './views/textile-page.scss';
 @import './views/textile-details.scss';
 @import './views/cart.scss';
+@import './views/user-details.scss';

@@ -1,0 +1,21 @@
+.user-details {
+
+    .orders-container {
+        .orders {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        button{
+            background-color: transparent;
+
+        }
+    }
+}
