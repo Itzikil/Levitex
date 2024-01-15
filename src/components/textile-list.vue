@@ -1,7 +1,10 @@
 <template>
     <section>
-        <router-link to="/explore">Back to categories</router-link>
-        <h2 class="mb-20">Showing {{ products.length }} results</h2>
+        <div>
+            <router-link to="/">Home</router-link> - 
+            <router-link to="/explore">Categories</router-link>
+        </div>
+        <h2 class="mb-20">Showing {{ products.length }} {{products[0].category}}</h2>
         <ul class="textile-list">
             <textilePreview v-for="product in products" :product="product" />
         </ul>

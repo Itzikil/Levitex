@@ -1,6 +1,12 @@
 .textile-details {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
+
+    .router-links {
+        align-self: baseline;
+    }
 
     h1 {
         font-size: xx-large;
@@ -9,7 +15,7 @@
         padding: 10px;
     }
 
-    div {
+    .item-container {
         border-radius: 10px;
         overflow: hidden;
         height: 300px;
@@ -32,9 +38,10 @@
 
 
     @media (max-width:600px) {
-        div {
+        .item-container {
             flex-direction: column;
             height: fit-content;
+
             img {
                 width: 100%;
             }

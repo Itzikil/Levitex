@@ -10,7 +10,11 @@
                 <img :src="item.imgUrl" alt="">
             </li>
         </ul>
-        <div>
+        <div v-if="afterBuy" class="flex align-center column">
+            <h3>Thank you for buying</h3>
+            <p>You can check your order <router-link :to="`/user/${loggedinUser._id}`">here</router-link></p>
+        </div>
+        <div v-else>
             <h3>Total</h3>
             <p>{{ sumItems }} $</p>
         </div>
@@ -22,7 +26,7 @@
 export default {
     data() {
         return {
-            // cartItems: this.cart()
+            afterBuy: false
         }
     },
     created() {
@@ -36,10 +40,15 @@ export default {
             var items = this.cartItems
             return items.reduce((sum, item) => sum + item.price, 0)
         },
+        loggedinUser() {
+            return this.$store.getters.loggedinUser
+        },
     },
     methods: {
-        addOrder(){
+        addOrder() {
+            if(!this.sumItems) return console.log('need to add items');
             this.$store.dispatch({ type: 'addOrder' })
+            this.afterBuy = true
         }
     }
 }

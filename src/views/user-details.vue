@@ -1,25 +1,26 @@
 <template>
     <div class="user-details">
-        <h1>Hello {{ getUser.username }}</h1>
-        <router-link to="/cart">To your cart</router-link>
-        <div>
+        <h1>Hello <span class="bold">{{ getUser.username }}</span></h1>
+        <!-- <router-link to="/cart">To your cart</router-link> -->
+        <div class="user-info">
             <p>Your details:</p>
-            <p>username - {{ getUser.username }}</p>
+            <p>Username - {{ getUser.username }}</p>
             <p>password - {{ getUser.password }}</p>
-            <p>id - {{ getUser._id }}</p>
+            <p>Id - {{ getUser._id }}</p>
         </div>
         <div class="orders-container">
             <h3>{{ orders.length }} Orders</h3>
-            <div v-for="order in orders" class="orders">
-                <p> Order id - {{ order._id }} </p>
-                <p>{{ order.items.length }} items</p>
-                <p>{{ sumPrice(order) }} $</p>
-                <div v-if="order._id === orderOpend" v-for="item in order.items">
+            <div v-for="order in orders" class="orders" @click="openOrder(order._id)">
+                <div class="order-line">
+                    <p>{{ dateFormat(order.createdAt) }} </p>
+                    <p>{{ order.items.length }} items</p>
+                    <p>{{ sumPrice(order) }} $</p>
+                </div>
+                <div v-if="order._id === orderOpend" v-for="item in order.items" class="order-details">
                     <img :src="item.imgUrl" alt="">
                     <p>{{ item.name }}</p>
                     <p>{{ item.price }}$</p>
                 </div>
-                <button @click="openOrder(order._id)">{{ orderOpend ? 'close' : 'open' }} order</button>
             </div>
         </div>
     </div>
@@ -48,6 +49,10 @@ export default {
         },
         openOrder(orderId) {
             this.orderOpend = this.orderOpend ? '' : orderId
+        },
+        dateFormat(date) {
+            const originalDate = new Date(date);
+            return `${originalDate.getDate()}.${originalDate.getMonth() + 1}.${originalDate.getFullYear().toString().slice(-2)}`;
         }
     }
 }

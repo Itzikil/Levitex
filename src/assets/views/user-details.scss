@@ -1,10 +1,55 @@
 .user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 10px;
+        padding-inline: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(12, 12, 12, 0.151);
+    }
 
     .orders-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+        h3 {
+            align-self: baseline;
+        }
+
         .orders {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
             align-items: center;
+            gap: 20px;
+            width: 90%;
+            background: white;
+            padding-inline: 20px;
+            padding-block: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(12, 12, 12, 0.151);
+
+            .order-line {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .order-details {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+            }
         }
 
         img {
@@ -13,7 +58,8 @@
             border-radius: 10px;
             object-fit: cover;
         }
-        button{
+
+        button {
             background-color: transparent;
 
         }

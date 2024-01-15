@@ -1,8 +1,14 @@
 <template>
-    <section v-if="textile" class="textile-details flex column">
-        <router-link :to="`/explore/${textile.category}`">back to {{ textile.category }}</router-link>
+    <section v-if="textile" class="textile-details">
+        <div class="router-links">
+            <p>
+                <router-link :to="`/`">Home</router-link> -
+                <router-link :to="`/explore`">Categories</router-link> -
+                <router-link :to="`/explore/${textile.category}`">{{ textile.category }}</router-link>
+            </p>
+        </div>
         <h1>{{ textile.name }}</h1>
-        <div class="flex">
+        <div class="item-container flex">
             <img :src="textile.imgUrl" alt="">
             <p>{{ textile.desc }}</p>
         </div>
