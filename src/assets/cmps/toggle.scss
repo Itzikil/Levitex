@@ -1,0 +1,119 @@
+.toggle-container {
+    width: 365px;
+    height: 145px;
+    border-radius: 200px;
+    background: #367AB4;
+    box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.25) inset, 0px -1px 13px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px #FFF, 0px -3px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    transition: 3s;
+
+    .sun-moon {
+        width: 35%;
+        height: 88%;
+        position: relative;
+        transform: translate(15%, 7%);
+        transition: 2s;
+        z-index: 30;
+        overflow: hidden;
+        cursor: pointer;
+        // clip-path: fill-box;
+        border-radius: 50%;
+        filter: drop-shadow(4px 7px 8.1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        .sun {
+            position: absolute;
+            width: 100%;
+            border-radius: 50%;
+            height: 100%;
+            background: #F2C429;
+            clip-path: fill-box;
+            box-shadow: 3px 4px 4px 0px rgba(254, 255, 223, 0.61) inset, 0px -5px 4px 0px rgba(94, 86, 15, 0.25) inset;
+        }
+
+        .moon {
+            clip-path: fill-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #C4C9D2;
+            transform: translateX(105%);
+            transition: 2s;
+            box-shadow: 3px 4px 4px 0px rgba(248, 249, 241, 0.61) inset, 0px -5px 4px 0px rgba(167, 167, 167, 0.25) inset;
+
+            .spot {
+                border-radius: 50%;
+                background-color: #A4A1A1;
+                box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+                position: absolute;
+            }
+
+            .spot1 {
+                transform: translate(280%, 110%);
+                height: 20px;
+                width: 20px;
+            }
+
+            .spot2 {
+                transform: translate(40%, 110%);
+                height: 50px;
+                width: 50px;
+            }
+
+            .spot3 {
+                transform: translate(230%, 170%);
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+
+
+    .front-clouds {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(37%);
+        transition: 3s;
+    }
+
+    .back-clouds {
+        position: absolute;
+        bottom: 0;
+        transform: translate(-5%, 30%);
+        transition: 3s;
+    }
+
+    .stars {
+        position: absolute;
+        top: 0;
+        transform: translateY(-104%);
+        transition: 3.3s;
+    }
+
+    &.night-mode {
+        border-radius: 200px;
+        background: #1B1D29;
+        box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.25) inset, 0px -1px 13px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px #FFF, 0px -3px 4px 0px rgba(0, 0, 0, 0.25);
+
+        .sun-moon {
+            transform: translate(170%, 7%);
+
+            .moon {
+                transform: translateX(0%);
+            }
+        }
+
+        .front-clouds {
+            transform: translateY(105%);
+        }
+
+        .back-clouds {
+            transform: translateY(112%);
+        }
+
+        .stars {
+            transform: translate(15%, 15%);
+        }
+    }
+}

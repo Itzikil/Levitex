@@ -13,7 +13,7 @@
             <p>{{ textile.desc }}</p>
         </div>
         <h3>${{ textile.price }}</h3>
-        <button @click="addToCart(textile._id)">Add to cart</button>
+        <button @click="addToCart(textile)">Add to cart</button>
     </section>
     <h1 v-else>Sorry can't find the product</h1>
 </template>
@@ -33,8 +33,8 @@ export default {
         this.textile = textile
     },
     methods: {
-        addToCart(productId) {
-            this.$store.dispatch({ type: 'addToCart', productId })
+        addToCart(product) {
+            this.$store.dispatch({ type: 'addToCart', product })
         }
     },
     components: {
